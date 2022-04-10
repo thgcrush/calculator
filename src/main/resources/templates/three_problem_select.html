@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>运算选择</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+    <div id="arithmetic-select-container" class="arithmetic-select-container">
+        <div id="arithmetic-select" class="arithmetic-select">
+            <div id="integer-arithmetic" class="integer-arithmetic">
+                整数运算
+            </div>
+            <br>
+            <div id="fraction-arithmetic" class="fraction-arithmetic">
+                分数运算
+            </div>
+            <br>
+            <div id="decimal-arithmetic" class="decimal-arithmetic">
+                小数运算
+            </div>
+            <br>
+            <div id="comprehensive-test" class="comprehensive-test">
+                综合测试
+            </div>
+        </div>
+    </div>
+    <script th:src="@{https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js}"></script>
+    <script>
+        $('#integer-arithmetic').click(function(){
+            window.location.href="http://localhost:8080/three/problem/arithmetic"
+        })
+    </script>
+</body>
+</html>

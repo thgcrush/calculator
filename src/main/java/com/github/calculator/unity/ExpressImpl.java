@@ -12,6 +12,14 @@ public class ExpressImpl extends ExpressBase implements Express {
     private int nowExpressResult;
     private static final HashMap<Character, Integer> PRIORITY;
 
+    public int getNowExpressResult() {
+        return nowExpressResult;
+    }
+
+    public String getNowExpress() {
+        return nowExpress;
+    }
+
     static {
         PRIORITY = new HashMap<Character, Integer>();
         PRIORITY.put('+', 0);
@@ -52,7 +60,7 @@ public class ExpressImpl extends ExpressBase implements Express {
         for (int i = 1; i <= opnums; ++i) {
             int number = rand.nextInt(MAXNUMBER + 1);//0~100
             int id = rand.nextInt(4);
-            if (id == 3 && preNumber % number != 0) {//如果是除法就看前面那个能不能整除当前的不能就换个运算符
+            if (id == 3 &&(preNumber==0||number==0||preNumber%number!=0)) {//如果是除法就看前面那个能不能整除当前的不能就换个运算符
                 id = rand.nextInt(3);
             }
             if (id == 2&&preop==2) id = rand.nextInt(2);
